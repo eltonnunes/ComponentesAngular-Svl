@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { DatepickerComponent } from './components/datepicker/datepicker.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DatepickerComponent
+    DatepickerComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,

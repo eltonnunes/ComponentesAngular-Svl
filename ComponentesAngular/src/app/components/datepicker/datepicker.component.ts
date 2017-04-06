@@ -3,14 +3,6 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core'
 declare var $: any;
 declare var moment: any;
 
-// var _timePicker: boolean = false;
-// var _singleDatePicker: boolean = false;
-// var _showWeekNumbers: boolean = false;
-// var _autoApply: Boolean = false;
-
-// var _minDate: string = moment().startOf('day');;
-// var _maxDate: string = moment().endOf('day');;
-
 var _startDate: string = moment().subtract(29, 'days');
 var _endDate: string = moment();
 
@@ -30,15 +22,12 @@ export class DatepickerComponent implements OnInit {
   @Input() maxDate: string = "01/01/2200";
   @Input() startDate: string = moment().subtract(29, 'days');
   @Input() endDate: string = moment();
-  @Input() autoApply: boolean = false;
+  @Input() autoApply: boolean = true;
   @Input() showDropdowns: boolean = false;
-  @Input() showISOWeekNumbers: boolean = false;
   @Input() showCustomRangeLabel: boolean = true;
-  @Input() timePicker24Hour: boolean = false;
+  @Input() timePicker24Hour: boolean = true;
   @Input() timePickerSeconds: boolean = false;
-  @Input() linkedCalendars: boolean = true;
-  @Input() autoUpdateInput: boolean = true;
-  @Input() alwaysShowCalendars: boolean = true;
+  @Input() alwaysShowCalendars: boolean = false;
   @Input() ranges: object =
   {
     'Hoje': [moment(), moment()],
@@ -52,33 +41,28 @@ export class DatepickerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
-    cb(_startDate, _endDate);
+    atualizaData(_startDate, _endDate);
 
     $('#reportrange').daterangepicker({
-
-      startDate: this.startDate,
-      endDate: this.endDate,
-      singleDatePicker: this.singleDatePicker,
       timePicker: this.timePicker,
+      singleDatePicker: this.singleDatePicker,
+      showWeekNumbers: this.showWeekNumbers,
       minDate: this.minDate,
       maxDate: this.maxDate,
-      showWeekNumbers: this.showWeekNumbers,
+      startDate: this.startDate,
+      endDate: this.endDate,
       autoApply: this.autoApply,
-      showDropdowns: this.timePicker24Hour,
-      showISOWeekNumbers: this.timePicker24Hour,
-      showCustomRangeLabel: this.timePicker24Hour,
+      showDropdowns: this.showDropdowns,
+      showISOWeekNumbers: this.showWeekNumbers,
+      showCustomRangeLabel: this.showCustomRangeLabel,
       timePicker24Hour: this.timePicker24Hour,
       timePickerSeconds: this.timePickerSeconds,
-      linkedCalendars: this.linkedCalendars,
-      autoUpdateInput: this.autoUpdateInput,
       alwaysShowCalendars: this.alwaysShowCalendars,
       ranges: this.ranges
-    });
-
+    }, atualizaData);
   }
 }
 
-function cb(_startDate, _endDate) {
+function atualizaData(_startDate, _endDate) {
   $('#reportrange span').html(_startDate.format('DD/MM/YYYY') + ' - ' + _endDate.format('DD/MM/YYYY'));
 }

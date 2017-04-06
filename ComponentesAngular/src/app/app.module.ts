@@ -9,6 +9,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 import { GridComponent } from './components/grid/grid.component';
 import { KeysPipe } from './pipes/keys.pipe';
 import { UsersService } from './providers/users.service';
+import { NotifyComponent } from './components/notify/notify.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { UsersService } from './providers/users.service';
     DatepickerComponent,
     PaginationComponent,
     GridComponent,
-    KeysPipe
+    KeysPipe,
+    NotifyComponent
   ],
   imports: [
     BrowserModule,

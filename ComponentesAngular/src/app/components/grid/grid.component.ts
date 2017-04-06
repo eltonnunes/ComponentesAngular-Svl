@@ -1,37 +1,42 @@
 import { Component, OnInit } from '@angular/core';
-
-
+import { UsersService } from 'app/providers/users.service';
+import { Users } from 'app/interfaces/Users';
 
 @Component({
   selector: 'svl-grid',
   templateUrl: './grid.component.html',
   styleUrls: ['./grid.component.css'],
-  
+  providers: [UsersService]
 })
 export class GridComponent implements OnInit {
 
-  columns: Object = { 'id' : '#' , 'firstName' : 'First Name', 'lastName' : 'Last Name', 'userName' : 'Username'};
-
-  rows = [
-                    { id : 1, firstName : 'A Mark', lastName : 'Otto', userName : '@mdo' },
-                    { id : 2, firstName : 'B Jacob', lastName : 'Thornton', userName : '@fat' },
-                    { id : 3, firstName : 'C Larry', lastName : 'the Bird', userName : '@twitter' },
-                    { id : 4, firstName : 'A Mark', lastName : 'Otto', userName : '@mdo' },
-                    { id : 5, firstName : 'B Jacob', lastName : 'Thornton', userName : '@fat' },
-                    { id : 6, firstName : 'C Larry', lastName : 'the Bird', userName : '@twitter' },
-                    { id : 7, firstName : 'A Mark', lastName : 'Otto', userName : '@mdo' },
-                    { id : 8, firstName : 'B Jacob', lastName : 'Thornton', userName : '@fat' },
-                    { id : 9, firstName : 'C Larry', lastName : 'the Bird', userName : '@twitter' },
-                    { id : 10, firstName : 'A Mark', lastName : 'Otto', userName : '@mdo' },
-                    { id : 11, firstName : 'B Jacob', lastName : 'Thornton', userName : '@fat' },
-                    { id : 12, firstName : 'C Larry', lastName : 'the Bird', userName : '@twitter' }
-                  ];
+  columns: Object = { 'id' : '#' , 'first_name' : 'First Name', 'last_name' : 'Last Name', 'avatar' : 'Avatar'};
 
   pagination: any = { current : 1, totalRecords : 12, recordPerPage : 4, pagination : true };
   
-  constructor() { }
+  arrayObject: any = {};
+
+  constructor(
+    private usersService: UsersService
+  ) { 
+      this.listData();
+  }
 
   ngOnInit() {
+
+  }
+
+  currentUpdate(event){
+    this.listData(event.current);
+  }
+
+  listData(pginit : number = 1){
+      this.arrayObject = this.usersService.getUsers(pginit).subscribe(users => {
+        this.pagination.current = users.page;
+        this.pagination.totalRecords = users.total;
+        this.pagination.recordPerPage = users.per_page;
+        this.arrayObject = users;
+      });
   }
 
 }

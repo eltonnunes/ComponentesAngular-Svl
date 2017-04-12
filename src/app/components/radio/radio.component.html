@@ -1,0 +1,9 @@
+<div class="col-sm-{{sizeRadio}}">
+    <div class="radio" *ngFor="let itens of dadosRadio; let i = index">
+        <label>
+            <input name="{{nameRadio}}" type="radio" value="{{i}}">
+            <span class="circle"></span>
+            <span class="check"></span>{{itens}}
+        </label>
+    </div>
+</div>

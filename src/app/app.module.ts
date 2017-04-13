@@ -17,6 +17,8 @@ import { InputExemploComponent } from './components/input-exemplo/input-exemplo.
 import { AlertExemploComponent } from './components/alert-exemplo/alert-exemplo.component';
 import { RadioComponent } from './components/radio/radio.component';
 import { RadioExemploComponent } from './components/radio-exemplo/radio-exemplo.component';
+import { ButtonsComponent } from './components/buttons/buttons.component';
+import { ButtonsExemploComponent } from './components/buttons-exemplo/buttons-exemplo.component';
 
 // Rotas
 const appRoutes: Routes = [
@@ -25,7 +27,8 @@ const appRoutes: Routes = [
   { path: 'grid', component: GridExemploComponent },
   { path: 'alert', component: AlertExemploComponent },
   { path: 'pagination', component: PaginationComponent },
-  { path: 'radio', component: RadioExemploComponent }
+  { path: 'radio', component: RadioExemploComponent },
+  { path: 'buttons', component: ButtonsExemploComponent }
 ];
 
 @NgModule({
@@ -41,7 +44,9 @@ const appRoutes: Routes = [
     InputExemploComponent,
     AlertExemploComponent,
     RadioComponent,
-    RadioExemploComponent
+    RadioExemploComponent,
+    ButtonsComponent,
+    ButtonsExemploComponent
   ],
   imports: [
     BrowserModule,

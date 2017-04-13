@@ -7,57 +7,60 @@ import { Component, Input } from '@angular/core';
 })
 export class AlertsComponent {
 
-  @Input() typeAlert: number;
-  @Input() messageText: string;
-  alert: string;
-  title: string;
-  icon: string;
-  message: string;
-  response: string;
+  @Input() type    : string = "informacao";
+  @Input() message : string = "Você está usando o sistema da Serveloja";
+  
+  typeOut    : string;
+  titleOut   : string;
+  iconOut    : string;
+  messageOut : string;
 
   constructor() {}
 
   ngOnInit() {
-    this.alert = this.textAlert();
-    this.icon = this.textIcon();
-    this.title = this.textTitle();
-    this.message = this.messageText;
+    this.typeOut    = this.textAlert();
+    this.iconOut    = this.textIcon();
+    this.titleOut   = this.textTitle();
+    this.messageOut = this.message;
   }
 
   // classe do CSS
   textAlert(): any {
-    switch (this.typeAlert) {
-      case 0 : this.response = "info"; break;
-      case 1 : this.response = "success"; break;
-      case 2 : this.response = "warning"; break;
-      case 3 : this.response = "danger"; break;
-      default : this.response = "info"; break;
+    let reply;
+    switch (this.type) {
+      case "informacao" : reply = "info"; break;
+      case "sucesso"    : reply = "success"; break;
+      case "alerta"     : reply = "warning"; break;
+      case "erro"       : reply = "danger"; break;
+      default           : reply = "info"; break;
     }
-    return this.response;
+    return reply;
   }
 
   // título alert
   textTitle(): any {
-    switch (this.typeAlert) {
-      case 0 : this.response = "Informação:"; break;
-      case 1 : this.response = "Sucesso:"; break; 
-      case 2 : this.response = "Alerta:"; break;
-      case 3 : this.response = "Perigo:"; break;
-      default : this.response = "Informação:"; break;
+    let reply;
+    switch (this.type) {
+      case "informacao" : reply = "Informação:"; break;
+      case "sucesso"    : reply = "Sucesso:"; break; 
+      case "alerta"     : reply = "Alerta:"; break;
+      case "erro"       : reply = "Perigo:"; break;
+      default           : reply = "Informação:"; break;
     }
-    return this.response;
+    return reply;
   }
 
   // ícone do alert que será exibido
   textIcon(): any {
-    switch (this.typeAlert) {
-      case 0 : this.response = "info_outline"; break;
-      case 1 : this.response = "check"; break;
-      case 2 : this.response = "warning"; break;
-      case 3 : this.response = "error_outline"; break;
-      default : this.response = "info_outline"; break;
+    let reply;
+    switch (this.type) {
+      case "informacao" : reply = "info_outline"; break;
+      case "sucesso"    : reply = "check"; break;
+      case "alerta"     : reply = "warning"; break;
+      case "erro"       : reply = "error_outline"; break;
+      default           : reply = "info_outline"; break;
     }
-    return this.response;
+    return reply;
   }
 
 }

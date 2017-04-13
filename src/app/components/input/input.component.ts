@@ -7,26 +7,27 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 })
 export class InputComponent implements OnInit {
 
-  @Input() type: string;
-  @Input() size: number;
-  @Input() name: string;
-  @Input() typeInput: string;
-  tipoInput: string;
-  sizeInput: number;
-  nameInput: string;
-  titleInput: string;
-  iconInput: string;
-  inputType: string;
+  @Input() type      : string;
+  @Input() size      : number;
+  @Input() name      : string;
+  @Input() typeInput : string;
+
+  tipoOut  : string;
+  sizeOut  : number;
+  nameOut  : string;
+  titleOut : string;
+  iconOut  : string;
+  inputOut : string;
 
   constructor() { }
 
   ngOnInit() {
-    this.tipoInput = this.typeFinal();
-    this.iconInput = this.icon();
-    this.sizeInput = this.size;
-    this.titleInput = this.name;
-    this.nameInput = this.retiraAcentos(this.name);
-    this.inputType = this.typeInput;
+    this.tipoOut  = this.typeFinal();
+    this.iconOut  = this.icon();
+    this.sizeOut  = this.size;
+    this.titleOut = this.name;
+    this.nameOut  = this.retiraAcentos(this.name);
+    this.inputOut = this.typeInput;
   }
 
   // Adiciona classe conforme informado
@@ -34,8 +35,8 @@ export class InputComponent implements OnInit {
     let reply;
     switch(this.type) {
         case "success" : reply = "has-" + this.type; break;
-        case "error" : reply = "has-" + this.type; break;
-        case "empty" : reply = this.type; break;
+        case "error"   : reply = "has-" + this.type; break;
+        case "empty"   : reply = this.type; break;
         default : reply = this.type; break;
     }
     return reply;
@@ -46,8 +47,8 @@ export class InputComponent implements OnInit {
     let reply;
     switch(this.type) {
         case "success" : reply = "done"; break;
-        case "error" : reply = "error"; break;
-        case "empty" : reply = ""; break;
+        case "error"   : reply = "error"; break;
+        case "empty"   : reply = ""; break;
         default : reply = ""; break;
     }
     return reply;

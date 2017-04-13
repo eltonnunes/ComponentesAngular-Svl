@@ -10,16 +10,17 @@ export class RadioComponent implements OnInit {
   @Input() data: any[];
   @Input() size: number;
   @Input() name: string;
-  dadosRadio: any[];
-  sizeRadio: number;
-  nameRadio: string;
+
+  dadosOut : any[];
+  sizeOut  : number;
+  nameOut  : string;
 
   constructor() {}
 
   ngOnInit() {
-    this.dadosRadio = this.data;
-    this.sizeRadio = this.size;
-    this.nameRadio = this.name;
+    this.dadosOut = this.data;
+    this.sizeOut  = this.size;
+    this.nameOut  = this.name;
   }
 
 }

@@ -1,6 +1,6 @@
 ## Component Alerts
 
-O component `alerts` utiliza o seletor `<svl-alerts> </svl-alerts>` Não possui valores default e precisam ser informados quando o component for chamado.
+O component `alerts` utiliza o seletor `<svl-alerts> </svl-alerts>`. Possui valores padrão e quem pode ser modificados quando o component é utilizado.
 
 ### Seletor a ser Utilizado:
 ```html
@@ -13,17 +13,17 @@ O component `alerts` utiliza o seletor `<svl-alerts> </svl-alerts>` Não possui 
 
 
 
-- `typeAlert`: O atributo `typeAlert` é do tipo `number` e deve conter valores entre `0 e 3`, sendo `0` para alert de informações, `1` para ações completadas com sucesso, `2` para algum aviso e `3` para erros, lembrando que estas, ficam a critério de utilização do desenvolvedor.
+- `type`: é do tipo `string` e deve conter um valor que pode ser `informacao`, `sucesso`, `alerta` ou `erro`. Cada um desses itens, carrega um conjunto de ícones e cores referente a cada um deles. Caso nenhum valor ser informado, por padrão, ele usa o valor `informacao`.
 ###### Exemplo de utilização
 ```html
-<svl-alerts [typeAlert]="1">
+<svl-alerts [type]="'informacao'">
 </svl-alerts>
 ```
 
-- `messageText` é do tipo `string` e deve conter a mensagem de texto que será exibida no alert quando for chamado.
+- `message` é do tipo `string` e deve conter a mensagem de texto que será exibida no alert quando for chamado.
 ###### Exemplo de utilização
 ```html
-<svl-alerts [messageText]="'Solicitação realizada com sucesso'">
+<svl-alerts [message]="'Solicitação realizada com sucesso'">
 </svl-alerts>
 ```
 

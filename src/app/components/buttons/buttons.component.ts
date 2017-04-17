@@ -8,16 +8,16 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ButtonsComponent implements OnInit {
 
   @Input() format: string = "";
-  @Input() size: string = "";
-  @Input() color: string = "";
-  @Input() icon: boolean = false;
-  @Input() title: string = "Ok";
+  @Input() size: string   = "";
+  @Input() color: string  = "";
+  @Input() icon: string   = "";
+  @Input() title: string  = "Ok";
 
-  formatOut: string;
-  sizeOut  : string;
-  colorOut : string;
-  iconOut  : boolean;
-  titleOut : string;
+  formatOut : string;
+  sizeOut   : string;
+  colorOut  : string;
+  iconOut   : string;
+  titleOut  : string;
 
   constructor() { }
 

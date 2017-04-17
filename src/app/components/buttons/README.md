@@ -41,7 +41,7 @@ O component `button` utiliza o seletor `<svl-button> </svl-button>` possui valor
 </svl-button>
 ```
 
-- `icon` é do tipo `boolean` e deve conter o valor `true` ou `false`. Caso o atributo seja setado como `true`, será necessário informar no atributo `title`, qual é o ícone que será exibido. A lista de ícones encontra-se em `https://material.io/icons/`. Caso valor deste atributo não seja informando, por padrão, ele assumirá o valor `false`.
+- `icon` é do tipo `string` e deve conter como valor, o nome do ícone a ser utilizado. A lista de ícones encontra-se em `https://material.io/icons/`. Caso valor deste atributo não seja informando, por padrão, ele assumirá o valor vazio.
 ###### Exemplo de utilização
 ```html
 <svl-button
@@ -56,7 +56,7 @@ O component `button` utiliza o seletor `<svl-button> </svl-button>` possui valor
   [format] = "'quadrado'"
   [size] = "'medio'"
   [color] = "'verde'"
-  [icon] = true
-  [title] = "'print'">
+  [icon] = "'print'"
+  [title] = "'Print'">
 </svl-button>
 ```

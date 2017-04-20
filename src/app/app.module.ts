@@ -19,6 +19,8 @@ import { RadioComponent } from './components/radio/radio.component';
 import { RadioExemploComponent } from './components/radio-exemplo/radio-exemplo.component';
 import { ButtonsComponent } from './components/buttons/buttons.component';
 import { ButtonsExemploComponent } from './components/buttons-exemplo/buttons-exemplo.component';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { DropdownExemploComponent } from './components/dropdown-exemplo/dropdown-exemplo.component';
 
 // Rotas
 const appRoutes: Routes = [
@@ -28,7 +30,8 @@ const appRoutes: Routes = [
   { path: 'alert', component: AlertExemploComponent },
   { path: 'pagination', component: PaginationComponent },
   { path: 'radio', component: RadioExemploComponent },
-  { path: 'buttons', component: ButtonsExemploComponent }
+  { path: 'buttons', component: ButtonsExemploComponent },
+  { path: 'dropdown', component: DropdownExemploComponent }
 ];
 
 @NgModule({
@@ -46,7 +49,9 @@ const appRoutes: Routes = [
     RadioComponent,
     RadioExemploComponent,
     ButtonsComponent,
-    ButtonsExemploComponent
+    ButtonsExemploComponent,
+    DropdownComponent,
+    DropdownExemploComponent
   ],
   imports: [
     BrowserModule,

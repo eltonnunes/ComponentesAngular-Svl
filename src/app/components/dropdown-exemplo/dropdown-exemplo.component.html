@@ -1,3 +1,34 @@
-<p>
-  dropdown-exemplo works!
-</p>
+<h2>{{titleAlert}}</h2>
+
+<svl-dropdown
+    [menu] = "'Link externos'"
+    [title] = "'Clique em um dos itens'"
+    [options] = "[
+                    {link: 'www.globo.com', item: 'Globo', local: 'externo'},
+                    {link: 'www.google.com', item: 'Google', local: 'externo'},
+                    {link: 'www.infonet.com.br', item: 'Infonet', local: 'externo'}
+                ]"
+    [type] = "'dropdown'"
+    [format] = "'quadrado'"
+    [color] = "'padrao'"
+    [icon] = "'android'"
+    [smart] = "6"
+    [tablet] = "2"
+    [small] = "2"
+    [large] = "2"
+></svl-dropdown>
+
+<svl-dropdown
+    [menu] = "'Link internos'"
+    [title] = "'Clique em um dos itens'"
+    [options] = "[
+                    {link: 'alert', item: 'Alert', local: 'interno'},
+                    {link: 'buttons', item: 'Buttons', local: 'interno'},
+                    {link: 'dropdown', item: 'Dropdown', local: 'interno'}
+                ]"
+    [type] = "'dropdown'"
+    [smart] = "6"
+    [tablet] = "2"
+    [small] = "2"
+    [large] = "2"
+></svl-dropdown>

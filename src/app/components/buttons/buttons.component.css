@@ -1,0 +1,37 @@
+.noPadding {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.btn-1 {
+    width: 92%;
+}
+
+.btn-2 {
+    width: 96%;
+}
+
+.btn-3 {
+    width: 97.5%;
+}
+
+.btn-4 {
+    width: 98%;
+}
+
+.btn-5 {
+    width: 98.3%;
+}
+
+.btn-all {
+    width: 99%;
+}
+
+.btn a, .btn a:hover, .btn a.visited {
+    text-decoration: none;
+    color: #fff;
+}
+
+.offPadding {
+    padding: 0px;
+}

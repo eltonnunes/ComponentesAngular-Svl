@@ -1,0 +1,15 @@
+<div class="offPadding {{sizeOut}} {{marginOut}}">
+    <span class="{{typeOut}}">
+      <button href="#" class="dropdown-toggle btn {{colorOut}} {{dimensionOut}} {{formatOut}} noPadding {{percentOut}}" data-toggle="dropdown">
+        <i class="material-icons">{{iconOut}}</i> 
+        {{menuOut}} <b class="caret"></b>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right">
+        <li class="dropdown-header">{{titleOut}}</li>
+        <li *ngFor="let itens of optionOut;">
+          <a href="http://{{itens.link}}" target="_blank" *ngIf="itens.local == 'externo'">{{itens.item}}</a>
+          <a routerLink="/{{itens.link}}" routerLinkActive="active" *ngIf="itens.local == 'interno'">{{itens.item}}</a>
+        </li>
+      </ul>
+    </span>
+</div>

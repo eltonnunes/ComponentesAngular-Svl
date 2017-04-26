@@ -1,0 +1,26 @@
+<div class="col-md-12" style="text-align: center">
+
+    <ul class="pagination pagination-success" *ngIf="typePagination == 0">
+        <li *ngIf="prev">
+            <a href="javascript:void(0);" (click)="setPrevious()"> voltar</a>
+        </li>
+        <li *ngFor="let pg of arrayPages" [class]="current == pg ? 'active' : ''">
+            <a href="javascript:void(0);" (click)="setCurrent(pg)">{{pg}}</a>
+        </li>
+        <li *ngIf="next">
+            <a href="javascript:void(0);" (click)="setNext()">próximo </a>
+        </li>
+    </ul>
+
+<ul class="pagination pagination-primary" *ngIf="typePagination == 1">
+        <li *ngIf="prev"><a href="javascript:void(0);" [class]="current == init ? 'active' : ''" (click)="setCurrent(init)">{{init}}</a></li>
+        <li *ngIf="prev"><a href="javascript:void(0);">...</a></li>
+
+        <li *ngFor="let pg of arrayPages" [class]="current == pg ? 'active' : ''">
+            <a href="javascript:void(0);" (click)="setCurrent(pg)">{{pg}}</a>
+        </li>
+
+        <li *ngIf="next"><a href="javascript:void(0);">...</a></li>
+        <li *ngIf="next"><a href="javascript:void(0);" [class]="current == finish ? 'active' : ''" (click)="setCurrent(finish)">{{finish}}</a></li>
+    </ul>
+</div>

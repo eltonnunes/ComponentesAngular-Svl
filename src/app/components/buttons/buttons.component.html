@@ -1,0 +1,16 @@
+<div class="offPadding {{sizeOut}} {{marginOut}}">
+    <div *ngIf = "linkOut != ''">
+        <a routerLink="/{{linkOut}}" routerLinkActive="active">
+            <button class="btn {{formatOut}} {{dimensionOut}} {{colorOut}} noPadding {{percentOut}}">
+                <i class="material-icons">{{iconOut}}</i>
+                {{titleOut}}
+            </button>
+        </a>
+    </div>
+    <div *ngIf = "linkOut == ''">
+        <button class="btn {{formatOut}} {{dimensionOut}} {{colorOut}} noPadding {{percentOut}}">
+            <i class="material-icons">{{iconOut}}</i>
+            {{titleOut}}  
+        </button>
+    </div>
+</div>
